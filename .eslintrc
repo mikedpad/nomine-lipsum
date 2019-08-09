@@ -1,0 +1,58 @@
+{
+  "extends": ["airbnb", "prettier"],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "ecmaFeatures": {
+      "modules": true
+    },
+    "sourceType": "module"
+  },
+  "root": true,
+  "rules": {
+    "no-bitwise": [
+      2,
+      {
+        "int32Hint": true
+      }
+    ],
+    "no-plusplus": [
+      0,
+      {
+        "int32Hint": true
+      }
+    ],
+    "no-unused-expressions": [
+      2,
+      {
+        "allowTernary": true
+      }
+    ],
+    "quotes": [
+      2,
+      "backtick",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "import/extensions": [
+      2,
+      {
+        "js": "never",
+        "json": "always"
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      2,
+      {
+        "devDependencies": true,
+        "optionalDependencies": false,
+        "peerDependencies": false
+      }
+    ]
+  }
+}
