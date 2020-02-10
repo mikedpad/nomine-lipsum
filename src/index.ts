@@ -13,10 +13,10 @@ const surname = (): string => randomName(names.surname);
 const full = (): string => `${random()} ${surname()}`;
 
 export default {
+  full,
   random,
-  male,
   female,
+  male,
   unisex,
   surname,
-  full,
 };

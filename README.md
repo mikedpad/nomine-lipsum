@@ -6,28 +6,29 @@ Pick a random name from a list of the most popular names in the United States.
 
 ---
 
-The generator constructs names using string interpolation.
+Just call on one of the object's methods to generate a type of name.
 
-| Flag  | Description |
+| Method  | Description |
 | ----- | ----------- |
-| `:M:` | Male name   |
-| `:F:` | Female name |
-| `:R:` | Random name |
-| `:S:` | Surname     |
+| ```full()``` | Generate a random full name   |
+| ```random()``` | Generate a random given name   |
+| ```female()``` | Generate a female given name   |
+| ```male()``` | Generate a male given name   |
+| ```unisex()``` | Generate a unisex given name   |
+| ```surname()``` | Generate a random surname   |
 
 ```javascript
 import generator from 'nomine-lipsum';
 
-// Random given name
-generator(`:M:`); // Male   - "Michael"
-generator(`:F:`); // Female - "Theresa"
-generator(`:R:`); // Random - (male or female)
+// Generate a full name
+generator.full();       // Jane Smith
 
-// Random surname
-generator(`:S:`); // e.g. "Smith"
+// Generate a given (first) name
+generator.random();     // Morgan
+generator.female();     // Theresa
+generator.male();       // Michael
+generator.unisex();     // Terry
 
-// Put 'em together for a full name
-const randomName = generator(`:R: :R: :S:`);
-const firstName = generator(`:F: :F: :S:`);
-const firstName = generator(`:M: :M: :S:`);
+// Generate a surname
+generator.surname();    // Smith
 ```
