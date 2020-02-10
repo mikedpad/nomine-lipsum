@@ -1,34 +1,47 @@
 {
   "name": "nomine-lipsum",
-  "version": "1.0.2",
+  "version": "2.1.0",
   "author": "Michael Daniel Padilla <michaeldpadilla@gmail.com> (https://mikedpad.com)",
   "description": "A random name generator of the most popular names in the USA.",
   "license": "MIT",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "files": ["lib/**/*"],
+  "keywords": ["lorem", "ipsum", "placeholder", "name", "generator"],
   "repository": {
     "type": "git",
     "url": "git://github.com/mikedpad/nomine-lipsum.git"
   },
-  "main": "./lib/generator",
-  "keywords": [
-    "lorem",
-    "ipsum",
-    "placeholder",
-    "name",
-    "generator"
-  ],
+  "scripts": {
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "test": "jest src/",
+    "format": "prettier --write 'src/**/*.{ts,tsx}'",
+    "build": "rm -rf lib && tsc -p . && rm -rf lib/__tests__",
+    "prepare": "npm run build"
+  },
+  "jest": {
+    "errorOnDeprecated": true,
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "verbose": true,
+    "moduleFileExtensions": ["js", "json", "jsx", "ts", "d.ts", "tsx", "node"]
+  },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.8.4",
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
-    "@babel/plugin-transform-modules-commonjs": "^7.8.3",
-    "@babel/preset-env": "^7.8.4",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb": "^17.1.1",
-    "eslint-config-prettier": "^4.3.0",
+    "@types/jest": "^25.1.2",
+    "@types/node": "^13.7.0",
+    "@typescript-eslint/eslint-plugin": "^2.19.0",
+    "@typescript-eslint/parser": "^2.19.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-config-typescript": "^3.0.0",
+    "eslint-formatter-pretty": "^3.0.1",
+    "eslint-import-resolver-typescript": "^2.0.0",
     "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.18.3"
+    "eslint-plugin-prettier": "^3.1.2",
+    "jest": "^25.1.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^25.2.0",
+    "typescript": "^3.7.5"
   }
 }
