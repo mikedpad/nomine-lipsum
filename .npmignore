@@ -1,14 +1,14 @@
-# dependencies
-/node_modules
+# source
+src
 
-# testing
-/coverage
-
-# production
-/docs
-#/dist
+tsconfig.json
+.eslintrc
+.eslintignore
+.prettierrc
 
 # misc
+.vscode
+.cache
 .DS_Store
 
 # logs

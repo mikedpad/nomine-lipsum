@@ -1,14 +1,11 @@
 # dependencies
 /node_modules
 
-# testing
-/coverage
-
 # production
-/docs
-#/dist
+/lib
 
 # misc
+.cache
 .DS_Store
 
 # logs
