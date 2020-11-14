@@ -1,22 +1,25 @@
-import names from './names.json';
+import maleNames from './data/male.json';
+import femaleNames from './data/female.json';
+import unisexNames from './data/unisex.json';
+import surnameNames from './data/surname.json';
 
 const randomName = (arrayOfNames: string[]): string => {
   const { length } = arrayOfNames;
   return arrayOfNames[Math.floor(Math.random() * length)];
 };
 
-const random = (): string => randomName([...names.male, ...names.female, ...names.unisex]);
-const male = (): string => randomName(names.male);
-const female = (): string => randomName(names.female);
-const unisex = (): string => randomName(names.unisex);
-const surname = (): string => randomName(names.surname);
+const random = (): string => randomName([...maleNames, ...femaleNames, ...unisexNames]);
+const male = (): string => randomName(maleNames);
+const female = (): string => randomName(femaleNames);
+const unisex = (): string => randomName(unisexNames);
+const surname = (): string => randomName(surnameNames);
 const full = (): string => `${random()} ${surname()}`;
 
 export default {
   full,
   random,
-  female,
   male,
+  female,
   unisex,
   surname,
 };
