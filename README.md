@@ -18,17 +18,17 @@ Just call on one of the object's methods to generate a type of name.
 | ```surname()``` | Generate a random surname   |
 
 ```javascript
-import generator from 'nomine-lipsum';
+import nameGenerator from 'nomine-lipsum';
 
 // Generate a full name
-generator.full();       // Jane Smith
+nameGenerator.full();       // Jane Smith
 
 // Generate a given (first) name
-generator.random();     // Morgan
-generator.female();     // Theresa
-generator.male();       // Michael
-generator.unisex();     // Terry
+nameGenerator.random();     // Morgan
+nameGenerator.female();     // Theresa
+nameGenerator.male();       // Michael
+nameGenerator.unisex();     // Terry
 
 // Generate a surname
-generator.surname();    // Smith
+nameGenerator.surname();    // Smith
 ```
