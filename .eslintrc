@@ -1,6 +1,6 @@
 {
   "parser": "@typescript-eslint/parser",
-  "extends": ["airbnb-base", "prettier", "typescript", "typescript/prettier"],
+  "extends": ["airbnb-base", "prettier", "typescript"],
   "plugins": ["@typescript-eslint"],
   "env": {
     "browser": true,
@@ -83,7 +83,6 @@
         "devDependencies": ["src/__tests__/**/*.{ts,tsx}"]
       }
     ],
-    "prettier/prettier": 2,
     "@typescript-eslint/quotes": [
       2,
       "backtick",

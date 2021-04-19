@@ -1,23 +1,13 @@
 {
   "name": "nomine-lipsum",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "author": "Michael Daniel Padilla <michaeldpadilla@gmail.com> (https://mikedpad.com)",
   "description": "A random name generator of the most popular names in the USA.",
   "license": "MIT",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
-  "files": [
-    "lib/**/*"
-  ],
-  "keywords": [
-    "lorem",
-    "ipsum",
-    "placeholder",
-    "name",
-    "generator",
-    "faker",
-    "data"
-  ],
+  "files": ["lib/**/*"],
+  "keywords": ["lorem", "ipsum", "placeholder", "name", "generator", "faker", "data"],
   "repository": {
     "type": "git",
     "url": "git://github.com/mikedpad/nomine-lipsum.git"
@@ -34,15 +24,7 @@
     "preset": "ts-jest",
     "testEnvironment": "node",
     "verbose": true,
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "jsx",
-      "ts",
-      "d.ts",
-      "tsx",
-      "node"
-    ]
+    "moduleFileExtensions": ["js", "json", "jsx", "ts", "d.ts", "tsx", "node"]
   },
   "devDependencies": {
     "@types/jest": "^26.0.15",
