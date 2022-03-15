@@ -1,30 +1,49 @@
 {
   "name": "nomine-lipsum",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "author": "Michael Daniel Padilla <michaeldpadilla@gmail.com> (https://mikedpad.com)",
   "description": "A random name generator of the most popular names in the USA.",
   "license": "MIT",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
-  "files": ["lib/**/*"],
-  "keywords": ["lorem", "ipsum", "placeholder", "name", "generator", "faker", "data"],
+  "files": [
+    "lib/**/*"
+  ],
+  "keywords": [
+    "lorem-ipsum",
+    "placeholder",
+    "name",
+    "generator",
+    "popular",
+    "faker"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/mikedpad/nomine-lipsum.git"
   },
   "scripts": {
-    "lint": "eslint --format=pretty 'src/**/*.{ts,tsx}'",
-    "test": "jest src/",
-    "format": "prettier --write 'src/**/*.{ts,tsx}'",
-    "build": "rimraf lib && tsc -p . && rimraf lib/__tests__",
-    "prepare": "npm run build"
+    "lint": "eslint .",
+    "format": "prettier --write --plugin-search-dir=. .",
+    "removeTests": "rimraf lib/__tests__",
+    "test": "jest src",
+    "build": "rimraf lib && tsc",
+    "prepare": "npm run format && npm run lint && npm run build && npm run test && npm run removeTests",
+    "prepublishOnly": ""
   },
   "jest": {
     "errorOnDeprecated": true,
     "preset": "ts-jest",
     "testEnvironment": "node",
     "verbose": true,
-    "moduleFileExtensions": ["js", "json", "jsx", "ts", "d.ts", "tsx", "node"]
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx",
+      "ts",
+      "d.ts",
+      "tsx",
+      "node"
+    ]
   },
   "devDependencies": {
     "@types/jest": "^27.4.1",
@@ -32,12 +51,7 @@
     "@typescript-eslint/eslint-plugin": "^5.14.0",
     "@typescript-eslint/parser": "^5.14.0",
     "eslint": "^8.11.0",
-    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-config-typescript": "^3.0.0",
-    "eslint-formatter-pretty": "^4.0.0",
-    "eslint-import-resolver-typescript": "^2.3.0",
-    "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.0.3",
     "prettier": "^2.1.2",

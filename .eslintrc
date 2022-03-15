@@ -1,6 +1,7 @@
 {
+  "root": true,
   "parser": "@typescript-eslint/parser",
-  "extends": ["airbnb-base", "prettier", "typescript"],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
   "plugins": ["@typescript-eslint"],
   "env": {
     "browser": true,
@@ -8,94 +9,5 @@
   },
   "parserOptions": {
     "project": "./tsconfig.json"
-  },
-  "settings": {
-    "import/resolver": {
-      "node": true,
-      "typescript": {
-        "alwaysTryTypes": true
-      }
-    },
-    "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx", { "comment": true }]
-    }
-  },
-  "rules": {
-    "array-bracket-newline": [2, "consistent"],
-    "arrow-parens": [2, "as-needed"],
-    "function-paren-newline": 0,
-    "lines-between-class-members": 0,
-    "no-bitwise": [
-      2,
-      {
-        "int32Hint": true
-      }
-    ],
-    "no-console": [1, { "allow": ["warn", "error"] }],
-    "no-nested-ternary": 0,
-    "no-plusplus": [
-      0,
-      {
-        "int32Hint": true
-      }
-    ],
-    "no-unused-expressions": [
-      2,
-      {
-        "allowTernary": true
-      }
-    ],
-    "object-curly-newline": [
-      2,
-      {
-        "ObjectExpression": { "consistent": true },
-        "ObjectPattern": { "consistent": true },
-        "ImportDeclaration": { "multiline": true },
-        "ExportDeclaration": { "multiline": true }
-      }
-    ],
-    "quotes": [
-      2,
-      "backtick",
-      {
-        "avoidEscape": true
-      }
-    ],
-    "require-jsdoc": 0,
-    "import/extensions": [
-      2,
-      {
-        "js": "never",
-        "ts": "never",
-        "json": "always"
-      }
-    ],
-    "import/first": 2,
-    "import/order": [
-      2,
-      {
-        "newlines-between": "never"
-      }
-    ],
-    "import/no-extraneous-dependencies": [
-      2,
-      {
-        "devDependencies": ["src/__tests__/**/*.{ts,tsx}"]
-      }
-    ],
-    "@typescript-eslint/quotes": [
-      2,
-      "backtick",
-      {
-        "avoidEscape": true,
-        "allowTemplateLiterals": true
-      }
-    ],
-    "@typescript-eslint/no-unused-expressions": [
-      2,
-      {
-        "allowTernary": true
-      }
-    ]
   }
 }

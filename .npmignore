@@ -1,6 +1,7 @@
 # source
 src
 
+#configs
 tsconfig.json
 .eslintrc
 .eslintignore
@@ -13,5 +14,3 @@ tsconfig.json
 
 # logs
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
