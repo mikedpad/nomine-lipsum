@@ -1,6 +1,6 @@
 {
   "name": "nomine-lipsum",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "author": "Michael Daniel Padilla <michaeldpadilla@gmail.com> (https://mikedpad.com)",
   "description": "A random name generator of the most popular names in the USA.",
   "license": "MIT",
@@ -27,8 +27,7 @@
     "removeTests": "rimraf lib/__tests__",
     "test": "jest src",
     "build": "rimraf lib && tsc",
-    "prepare": "npm run format && npm run lint && npm run build && npm run test && npm run removeTests",
-    "prepublishOnly": ""
+    "prepare": "npm run format && npm run lint && npm run build && npm run test && npm run removeTests"
   },
   "jest": {
     "errorOnDeprecated": true,
