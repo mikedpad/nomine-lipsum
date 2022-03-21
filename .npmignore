@@ -1,5 +1,7 @@
 # source
 src
+__tests__
+getNameData.*
 
 #configs
 tsconfig.json

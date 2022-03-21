@@ -4,6 +4,9 @@
 # build
 /lib
 
+# temp
+/.temp
+
 # misc
 .cache
 .DS_Store
