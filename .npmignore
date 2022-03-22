@@ -1,13 +1,18 @@
 # source
-src
-__tests__
-getNameData.*
+src/
+__tests__/
+
+# build
+lib/data/getNameData.*
 
 #configs
 tsconfig.json
 .eslintrc
 .eslintignore
 .prettierrc
+.prettierignore
+.gitattributes
+.editorconfig
 
 # misc
 .vscode

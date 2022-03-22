@@ -20,6 +20,27 @@ expect.extend({
   },
 });
 
+describe(`A random name will be generated`, () => {
+  test(`full`, () => {
+    expect(fFull()).toBeTruthy();
+  });
+  test(`given`, () => {
+    expect(fGiven()).toBeTruthy();
+  });
+  test(`surname`, () => {
+    expect(nomine.surname()).toBeTruthy();
+  });
+  test(`male`, () => {
+    expect(nomine.male()).toBeTruthy();
+  });
+  test(`female`, () => {
+    expect(nomine.female()).toBeTruthy();
+  });
+  test(`unisex`, () => {
+    expect(nomine.unisex()).toBeTruthy();
+  });
+});
+
 describe(`A valid name for each option will be provided`, () => {
   test(`single male name`, () => {
     expect(fMale()).toBeInArray(male);
@@ -44,26 +65,5 @@ describe(`A valid name for each option will be provided`, () => {
   });
   test(`multiple (10) surnames`, () => {
     expect(Array.from({ length: 10 }).map(() => fSurname())).toBeInArray(surname);
-  });
-});
-
-describe(`A random name will be generated`, () => {
-  test(`full`, () => {
-    expect(fFull()).toBeTruthy();
-  });
-  test(`given`, () => {
-    expect(fGiven()).toBeTruthy();
-  });
-  test(`surname`, () => {
-    expect(nomine.surname()).toBeTruthy();
-  });
-  test(`male`, () => {
-    expect(nomine.male()).toBeTruthy();
-  });
-  test(`female`, () => {
-    expect(nomine.female()).toBeTruthy();
-  });
-  test(`unisex`, () => {
-    expect(nomine.unisex()).toBeTruthy();
   });
 });

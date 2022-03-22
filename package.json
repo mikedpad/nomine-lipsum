@@ -1,30 +1,37 @@
 {
   "name": "nomine-lipsum",
-  "version": "4.0.0",
-  "author": "Michael Daniel Padilla <michaeldpadilla@gmail.com> (https://mikedpad.com)",
-  "description": "A random name generator of the most popular names in the USA from 1880 to 2020.",
+  "version": "4.0.1",
+  "description": "A random name generator from the most popular names in the United States.",
   "license": "MIT",
+  "repository": "mikedpad/nomine-lipsum.git",
+  "author": {
+    "name": "Michael Daniel Padilla",
+    "email": "michaeldpadilla@gmail.com",
+    "url": "https://mikedpad.com"
+  },
+  "type": "module",
   "exports": "./lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
-    "lib/**/*"
+    "lib/index.js",
+    "lib/index.d.ts",
+    "lib/data/names.json"
   ],
-  "type": "module",
   "engines": {
     "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
   },
   "keywords": [
-    "lorem-ipsum",
+    "lorem",
+    "ipsum",
+    "lipsum",
     "placeholder",
+    "random",
     "name",
     "generator",
+    "faker",
     "popular",
-    "faker"
+    "usa"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/mikedpad/nomine-lipsum.git"
-  },
   "scripts": {
     "lint": "eslint .",
     "format": "prettier --write --plugin-search-dir=. .",

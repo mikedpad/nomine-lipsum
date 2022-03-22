@@ -1,13 +1,15 @@
 # dependencies
 /node_modules
+package-lock.json
 
 # build
 /lib
 
-# temp
+# temp folder to construct name lists
 /.temp
 
 # misc
 .cache
+.vscode
 .DS_Store
 npm-debug.log*
