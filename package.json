@@ -1,6 +1,6 @@
 {
   "name": "nomine-lipsum",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "A random name generator from the most popular names in the United States.",
   "license": "MIT",
   "repository": "mikedpad/nomine-lipsum.git",
