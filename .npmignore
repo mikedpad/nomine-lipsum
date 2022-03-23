@@ -1,12 +1,13 @@
 # source
 src/
-__tests__/
 
 # build
-lib/data/getNameData.*
+.temp/
+lib/umd/index.d.ts
 
 #configs
 tsconfig.json
+rollup.config.js
 .eslintrc
 .eslintignore
 .prettierrc

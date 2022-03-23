@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
     "moduleResolution": "node",
-    "module": "esnext",
+    "module": "es2015",
     "target": "es2020",
     "lib": ["es2020", "DOM"],
     "outDir": "lib",
     "allowSyntheticDefaultImports": true,
     "allowUnusedLabels": false,
     "declaration": true,
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": false,
     "removeComments": true,
@@ -16,6 +17,12 @@
     "strictNullChecks": true,
     "strict": true
   },
-  "include": ["src/**/*"],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "esnext",
+      "target": "esnext"
+    }
+  },
+  "include": ["src/*", "src/data/*", "src/types/*"],
   "exclude": ["node_modules", "lib"]
 }

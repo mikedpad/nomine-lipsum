@@ -5,15 +5,19 @@ import {
   surname as surnameNames,
 } from './data/names.json';
 
-const allGivenLength = maleNames.length + femaleNames.length + unisexNames.length;
+const maleLength = maleNames.length;
+const femaleLength = femaleNames.length;
+const unisexLength = unisexNames.length;
+const surnameLength = surnameNames.length;
+const givenLength = maleLength + femaleLength + unisexLength;
 
 /**
  * Get a random name from the top 1000 male names in the US.
  * Data provided by the US Social Security Administration.
  * @returns {string} A random male name.
  */
-export function male(): string {
-  return maleNames[Math.floor(Math.random() * maleNames.length)];
+function male(): string {
+  return maleNames[Math.floor(Math.random() * maleLength)];
 }
 
 /**
@@ -21,8 +25,8 @@ export function male(): string {
  * Data provided by the US Social Security Administration.
  * @returns {string} A random female name.
  */
-export function female(): string {
-  return femaleNames[Math.floor(Math.random() * femaleNames.length)];
+function female(): string {
+  return femaleNames[Math.floor(Math.random() * femaleLength)];
 }
 
 /**
@@ -30,8 +34,8 @@ export function female(): string {
  * Data provided by the US Social Security Administration.
  * @returns {string} A random unisex name.
  */
-export function unisex(): string {
-  return unisexNames[Math.floor(Math.random() * unisexNames.length)];
+function unisex(): string {
+  return unisexNames[Math.floor(Math.random() * unisexLength)];
 }
 
 /**
@@ -39,8 +43,8 @@ export function unisex(): string {
  * Data provided by the US Census Bureau.
  * @returns {string} A random surname.
  */
-export function surname(): string {
-  return surnameNames[Math.floor(Math.random() * surnameNames.length)];
+function surname(): string {
+  return surnameNames[Math.floor(Math.random() * surnameLength)];
 }
 
 /**
@@ -48,20 +52,20 @@ export function surname(): string {
  * Data provided by the US Social Security Administration.
  * @returns {string} A random first name.
  */
-export function given(): string {
-  const r = Math.floor(Math.random() * allGivenLength);
-  return r < maleNames.length
+function given(): string {
+  const r = Math.floor(Math.random() * givenLength);
+  return r < maleLength
     ? maleNames[r]
-    : r < maleNames.length + femaleNames.length
-    ? femaleNames[r - maleNames.length]
-    : unisexNames[r - maleNames.length - femaleNames.length];
+    : r < maleLength + femaleLength
+    ? femaleNames[r - maleLength]
+    : unisexNames[r - maleLength - femaleLength];
 }
 
 /**
  * Generate a random, full name.
  * @returns {string} A random full (first and last) name.
  */
-export function full(): string {
+function full(): string {
   return `${given()} ${surname()}`;
 }
 

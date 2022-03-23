@@ -1,11 +1,4 @@
-import nomine, {
-  full as fFull,
-  given as fGiven,
-  surname as fSurname,
-  male as fMale,
-  female as fFemale,
-  unisex as fUnisex,
-} from '../index';
+import nomine from '../index';
 import { male, female, unisex, surname } from '../data/names.json';
 
 expect.extend({
@@ -20,50 +13,50 @@ expect.extend({
   },
 });
 
-describe(`A random name will be generated`, () => {
-  test(`full`, () => {
-    expect(fFull()).toBeTruthy();
+describe(`A random name will be provided...`, () => {
+  test(`full name`, () => {
+    expect(nomine.full()).toBeTruthy();
   });
-  test(`given`, () => {
-    expect(fGiven()).toBeTruthy();
+  test(`given name`, () => {
+    expect(nomine.given()).toBeTruthy();
   });
   test(`surname`, () => {
     expect(nomine.surname()).toBeTruthy();
   });
-  test(`male`, () => {
+  test(`male name`, () => {
     expect(nomine.male()).toBeTruthy();
   });
-  test(`female`, () => {
+  test(`female name`, () => {
     expect(nomine.female()).toBeTruthy();
   });
-  test(`unisex`, () => {
+  test(`unisex name`, () => {
     expect(nomine.unisex()).toBeTruthy();
   });
 });
 
-describe(`A valid name for each option will be provided`, () => {
+describe(`A valid name from each list will be picked...`, () => {
   test(`single male name`, () => {
-    expect(fMale()).toBeInArray(male);
+    expect(nomine.male()).toBeInArray(male);
   });
   test(`multiple (10) male names`, () => {
-    expect(Array.from({ length: 10 }).map(() => fMale())).toBeInArray(male);
+    expect(Array.from({ length: 10 }).map(() => nomine.male())).toBeInArray(male);
   });
   test(`single female name`, () => {
-    expect(fFemale()).toBeInArray(female);
+    expect(nomine.female()).toBeInArray(female);
   });
   test(`multiple (10) female names`, () => {
-    expect(Array.from({ length: 10 }).map(() => fFemale())).toBeInArray(female);
+    expect(Array.from({ length: 10 }).map(() => nomine.female())).toBeInArray(female);
   });
   test(`single unisex name`, () => {
-    expect(fUnisex()).toBeInArray(unisex);
+    expect(nomine.unisex()).toBeInArray(unisex);
   });
   test(`multiple (10) unisex names`, () => {
-    expect(Array.from({ length: 10 }).map(() => fUnisex())).toBeInArray(unisex);
+    expect(Array.from({ length: 10 }).map(() => nomine.unisex())).toBeInArray(unisex);
   });
   test(`single surname`, () => {
-    expect(fSurname()).toBeInArray(surname);
+    expect(nomine.surname()).toBeInArray(surname);
   });
   test(`multiple (10) surnames`, () => {
-    expect(Array.from({ length: 10 }).map(() => fSurname())).toBeInArray(surname);
+    expect(Array.from({ length: 10 }).map(() => nomine.surname())).toBeInArray(surname);
   });
 });

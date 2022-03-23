@@ -228,32 +228,33 @@ function parseSurnameData(entries: IZipEntry[]) {
 
   return surname;
 }
+(async () => {
+  // Temporary folder location
+  const __dirname = path.dirname(fileURLToPath(import.meta.url));
+  const tempFolderPath = path.join(__dirname, '../../.temp');
 
-// Temporary folder location
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const tempFolderPath = path.join(__dirname, '../../.temp');
+  // Data URLs
+  const givenNameUrl = 'https://www.ssa.gov/oact/babynames/names.zip';
+  const givenNameFile = path.join(tempFolderPath, 'names.zip');
+  const surnameUrl = 'https://www2.census.gov/topics/genealogy/2010surnames/names.zip';
+  const surnameFile = path.join(tempFolderPath, 'surnames.zip');
 
-// Data URLs
-const givenNameUrl = 'https://www.ssa.gov/oact/babynames/names.zip';
-const givenNameFile = path.join(tempFolderPath, 'names.zip');
-const surnameUrl = 'https://www2.census.gov/topics/genealogy/2010surnames/names.zip';
-const surnameFile = path.join(tempFolderPath, 'surnames.zip');
+  // JSON file paths
+  const jsonNamesPath = path.join(__dirname, '../data', 'names.json');
 
-// JSON file paths
-const jsonNamesPath = path.join(__dirname, 'names.json');
+  // Create the temporary folder
+  await createFolder(tempFolderPath);
 
-// Create the temporary folder
-await createFolder(tempFolderPath);
+  // Gather the Given Names data
+  const namesZipFile = await getZipFile(givenNameUrl, givenNameFile);
+  const namesEntries = extractZipFile(namesZipFile, tempFolderPath);
+  const names = parseGivenNameData(namesEntries);
 
-// Gather the Given Names data
-const namesZipFile = await getZipFile(givenNameUrl, givenNameFile);
-const namesEntries = extractZipFile(namesZipFile, tempFolderPath);
-const names = parseGivenNameData(namesEntries);
+  // Gather the Surnames data
+  const surnamesZipFile = await getZipFile(surnameUrl, surnameFile);
+  const surnamesEntries = extractZipFile(surnamesZipFile, tempFolderPath);
+  const surnames = parseSurnameData(surnamesEntries);
 
-// Gather the Surnames data
-const surnamesZipFile = await getZipFile(surnameUrl, surnameFile);
-const surnamesEntries = extractZipFile(surnamesZipFile, tempFolderPath);
-const surnames = parseSurnameData(surnamesEntries);
-
-// Write the data to a JSON file
-await fs.writeFile(jsonNamesPath, JSON.stringify({ ...names, surname: surnames }, null, 2));
+  // Write the data to a JSON file
+  await fs.writeFile(jsonNamesPath, JSON.stringify({ ...names, surname: surnames }, null, 2));
+})();

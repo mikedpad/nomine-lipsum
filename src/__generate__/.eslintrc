@@ -1,0 +1,7 @@
+{
+  "extends": "../../.eslintrc",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": "src/__generate__"
+  }
+}
