@@ -3,7 +3,7 @@
   "version": "4.1.0",
   "description": "A random name generator from the most popular names in the United States.",
   "license": "MIT",
-  "repository": "mikedpad/nomine-lipsum.git",
+  "repository": "mikedpad/nomine-lipsum",
   "author": {
     "name": "Michael Daniel Padilla",
     "email": "michaeldpadilla@gmail.com",
