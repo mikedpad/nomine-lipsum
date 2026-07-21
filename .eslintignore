@@ -1,8 +1,0 @@
-**/*.d.ts
-/node_modules
-/lib
-/.temp
-.cache
-.DS_Store
-npm-debug.log*
-rollup.config.js

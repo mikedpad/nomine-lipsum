@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "module": "es2015",
     "target": "es2020",
     "lib": ["es2020", "DOM"],
@@ -23,6 +23,6 @@
       "target": "esnext"
     }
   },
-  "include": ["src/*", "src/data/*", "src/types/*"],
+  "include": ["src/*", "src/data/*"],
   "exclude": ["node_modules", "lib"]
 }

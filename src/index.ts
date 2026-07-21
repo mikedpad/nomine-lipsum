@@ -57,8 +57,8 @@ function given(): string {
   return r < maleLength
     ? maleNames[r]
     : r < maleLength + femaleLength
-    ? femaleNames[r - maleLength]
-    : unisexNames[r - maleLength - femaleLength];
+      ? femaleNames[r - maleLength]
+      : unisexNames[r - maleLength - femaleLength];
 }
 
 /**

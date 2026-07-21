@@ -1,14 +1,15 @@
-import pkg from './package.json';
-import typescript from 'rollup-plugin-typescript2';
-import { terser } from 'rollup-plugin-terser';
-import babel from '@rollup/plugin-babel';
+import { createRequire } from 'node:module';
+import typescript from '@rollup/plugin-typescript';
+import terser from '@rollup/plugin-terser';
 import json from '@rollup/plugin-json';
+
+const pkg = createRequire(import.meta.url)('./package.json');
 
 export default {
   input: 'src/index.ts',
   output: [
     {
-      file: pkg.exports,
+      file: pkg.module,
       format: 'es',
     },
     {
@@ -19,9 +20,13 @@ export default {
     },
   ],
   plugins: [
-    typescript(),
+    typescript({
+      tsconfig: './tsconfig.json',
+      declaration: false,
+      declarationMap: false,
+      sourceMap: false,
+    }),
     json({ compact: true, preferConst: true }),
-    babel({ extensions: ['.ts'], babelHelpers: 'bundled', exclude: 'node_modules/**' }),
     terser(),
   ],
 };

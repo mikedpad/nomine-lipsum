@@ -1,5 +1,14 @@
+import { describe, test, expect } from 'vitest';
 import nomine from '../index';
 import { male, female, unisex, surname } from '../data/names.json';
+
+declare module 'vitest' {
+  // Signature must mirror Vitest's own `Assertion<T = any>` for declaration merging.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  interface Assertion<T = any> {
+    toBeInArray(expected: string[]): T;
+  }
+}
 
 expect.extend({
   toBeInArray(received: string | string[], arr: string[]) {
