@@ -6,7 +6,7 @@ on:
 
 permissions:
   contents: read
-  id-token: write # required for npm provenance attestation
+  id-token: write # required for OIDC trusted publishing + provenance
 
 jobs:
   publish:
@@ -22,15 +22,18 @@ jobs:
           registry-url: https://registry.npmjs.org
           cache: npm
 
+      # Trusted Publishing requires npm >= 11.5.1; Node 22 ships an older npm.
+      - name: Upgrade npm
+        run: npm install -g npm@latest
+
       - name: Install dependencies
         run: npm ci
 
       - name: Build library
         run: npm run build:lib
 
-      # Provenance is enabled via "publishConfig.provenance" in package.json
-      # and the id-token permission above. prepublishOnly re-runs the full gate.
+      # No token needed: npm authenticates via OIDC using the trusted publisher
+      # configured for this package on npmjs.com. Provenance is generated
+      # automatically. prepublishOnly re-runs the full lint/format/test gate.
       - name: Publish
         run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
